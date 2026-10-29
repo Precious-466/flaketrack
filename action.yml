@@ -1,0 +1,22 @@
+name: "FlakeTrack"
+description: "Track test results across CI runs and flag flaky tests."
+author: "Precious-466"
+branding:
+  icon: "activity"
+  color: "orange"
+
+inputs:
+  report-paths:
+    description: "Glob pattern(s) for JUnit XML reports, one per line."
+    required: true
+    default: "**/junit*.xml"
+
+outputs:
+  total:
+    description: "Number of test cases found."
+  failed:
+    description: "Number of failed or errored test cases."
+
+runs:
+  using: "node20"
+  main: "dist/index.js"

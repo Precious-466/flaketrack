@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites tests="3" failures="1">
+  <testsuite name="github.com/example/shop/payments" tests="3" failures="1" errors="0" id="0" hostname="runner" time="0.540" timestamp="2026-10-29T10:00:00Z">
+    <properties>
+      <property name="go.version" value="go1.23.2 linux/amd64"></property>
+    </properties>
+    <testcase name="TestCharge" classname="payments" time="0.010"></testcase>
+    <testcase name="TestRefund/partial" classname="payments" time="0.520">
+      <failure message="Failed" type="">    refund_test.go:42: timeout waiting for webhook after 500ms</failure>
+    </testcase>
+    <testcase name="TestRefund/full" classname="payments" time="0.010">
+      <skipped message="    refund_test.go:51: needs sandbox key"></skipped>
+    </testcase>
+  </testsuite>
+</testsuites>

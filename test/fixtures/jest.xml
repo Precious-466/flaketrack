@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="4" failures="1" errors="0" time="1.204">
+  <testsuite name="Cart" errors="0" failures="1" skipped="1" timestamp="2026-10-29T10:00:00" time="0.812" tests="3">
+    <testcase classname="Cart adds an item" name="Cart adds an item" time="0.003">
+    </testcase>
+    <testcase classname="Cart applies discount" name="Cart applies discount" time="0.801">
+      <failure>Error: expect(received).toBe(expected) // Object.is equality
+
+Expected: 90
+Received: 100
+    at Object.&lt;anonymous&gt; (src/cart.test.js:14:22)</failure>
+    </testcase>
+    <testcase classname="Cart removes an item" name="Cart removes an item" time="0">
+      <skipped/>
+    </testcase>
+  </testsuite>
+  <testsuite name="Api" errors="0" failures="0" skipped="0" timestamp="2026-10-29T10:00:01" time="0.392" tests="1">
+    <testcase classname="Api GET /health returns 200" name="Api GET /health returns 200" time="0.392">
+    </testcase>
+  </testsuite>
+</testsuites>
