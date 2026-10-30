@@ -47,6 +47,12 @@ A flaky test passes and fails on the same code. Flaky tests waste CI time, teach
 
 Every test gets an ID of the form `<suite>::<name>`, for example `tests.test_auth::test_login_ok`. That ID is how FlakeTrack recognises the same test across different runs. The parser normalises the differences between frameworks: Jest repeats the full title in `classname`, Go puts subtests in the name (`TestRefund/partial`), and some tools nest suites.
 
+## Run history format
+
+Each CI run is stored as one `RunRecord` (see `src/record.ts`): the repo, commit SHA, run ID, attempt number, branch, workflow name, timestamp, and a compact list of `{ id, status, durationMs }` for every test. The attempt number is part of the record so that a re-run of the same run ID is kept next to the first try instead of overwriting it, which is exactly the evidence needed to spot a flaky test.
+
+The same shape is used for the data branch and, later, for the dashboard API. Saving records to the `flaketrack-data` branch is the next step on the roadmap and is not wired into the Action yet.
+
 ## Development
 
 ```bash
